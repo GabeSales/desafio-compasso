@@ -1,12 +1,11 @@
+import { Router } from "./routes/Router";
 
 function App() {
-
   return (
-    <div className="App">
-      <h1>XAMA PAI</h1>
+    <div>
+      <Router />
     </div>
-  )
+  );
 }
 
-export default App
- 
+export default App;
