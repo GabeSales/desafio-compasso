@@ -1,9 +1,20 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { createGlobalStyle } from "styled-components";
+import App from "./App";
 
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+const GlobalStyle = createGlobalStyle`
+//asteristo pra definir todo o escopo com margin e padding zero
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+`;
+
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
+    <GlobalStyle />
     <App />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
