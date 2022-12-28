@@ -1,57 +1,58 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
+import { Search } from "../../Components/Search";
+import { User } from "../../types/user";
 import * as S from "./SearchUserStyled";
 
-interface User {
-  avatar_url: string;
-  name: string;
-  bio: string;
-  location: string;
-  public_repos: string;
-  followers: string;
-  following: string;
-}
-
 export const SearchPage = () => {
+  const [user, setUser] = useState<User | null>(null);
 
-   
-  const [user, setUser] = useState({} as User) ;
+  const searchUser = async (userName: string) => {
+    const res = await fetch(`https://api.github.com/users/${userName}`);
+    const data = await res.json();
+    console.log(data);
+    const {
+      avatar_url,
+      name,
+      bio,
+      location,
+      public_repos,
+      followers,
+      following,
+    } = data;
 
-  const searchUser = () => {
-    const url = "https://api.github.com/users/gabesales";
-    axios
-      .get(url)
-      .then((res) => {
-        console.log("user", user);
-        setUser(res.data);
-      })
-      .catch((err) => {
-        console.log("deu ruim", err.res);
-      });
+    const userData: User = {
+      avatar_url,
+      name,
+      bio,
+      location,
+      public_repos,
+      followers,
+      following,
+    };
+
+    setUser(userData);
   };
 
   useEffect(() => {
-    searchUser();
+    // searchUser();
   }, []);
 
   return (
     <S.ContainerSearch>
-      <h1>Pesquisar Usuários do GitHub</h1>
-      <h3>Digite um nome para encontrar usuários e repositórios</h3>
-      <div>
-        <S.SearchInput />
-        <button>Search</button>
-
-        <div>
-          <S.Img src={user.avatar_url} />
-          <p>{user.name}</p>
-          <p>{user.bio}</p>
-          <p>{user.location}</p>
-          <p>Repositorios {user.public_repos}</p>
-          <p>Seguidores {user.followers}</p>
-          <p>Seguindo {user.following}</p>
-        </div>
-      </div>
+      <Search searchUser={searchUser} />
+      <S.Main>
+        {user && (
+          <S.CardDiv>
+            <S.Img src={user.avatar_url} />
+            <p>{user.name}</p>
+            <p>{user.bio}</p>
+            <p>{user.location}</p>
+            <p>Repositorios {user.public_repos}</p>
+            <p>Seguidores {user.followers}</p>
+            <p>Seguindo {user.following}</p>
+          </S.CardDiv>
+        )}
+      </S.Main>
     </S.ContainerSearch>
   );
 };
