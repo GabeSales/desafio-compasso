@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Search } from "../../Components/Search";
+import { Card } from "../../Components/Card/Card";
 import { User } from "../../types/user";
 import * as S from "./SearchUserStyled";
 
@@ -9,7 +10,9 @@ export const SearchPage = () => {
   const searchUser = async (userName: string) => {
     const res = await fetch(`https://api.github.com/users/${userName}`);
     const data = await res.json();
+
     console.log(data);
+
     const {
       avatar_url,
       name,
@@ -18,6 +21,7 @@ export const SearchPage = () => {
       public_repos,
       followers,
       following,
+      login,
     } = data;
 
     const userData: User = {
@@ -28,31 +32,16 @@ export const SearchPage = () => {
       public_repos,
       followers,
       following,
+      login,
     };
 
     setUser(userData);
   };
 
-  useEffect(() => {
-    // searchUser();
-  }, []);
-
   return (
     <S.ContainerSearch>
       <Search searchUser={searchUser} />
-      <S.Main>
-        {user && (
-          <S.CardDiv>
-            <S.Img src={user.avatar_url} />
-            <p>{user.name}</p>
-            <p>{user.bio}</p>
-            <p>{user.location}</p>
-            <p>Repositorios {user.public_repos}</p>
-            <p>Seguidores {user.followers}</p>
-            <p>Seguindo {user.following}</p>
-          </S.CardDiv>
-        )}
-      </S.Main>
+      <S.Main>{user && <Card user={user} />}</S.Main>
     </S.ContainerSearch>
   );
 };

@@ -8,7 +8,7 @@ export const goToReposPage = (navigate: NavigateFunction) => {
   navigate("");
 };
 
-export const goToStarredssPage = (navigate: NavigateFunction) => {
+export const goToStarredsPage = (navigate: NavigateFunction) => {
   navigate("");
 };
 

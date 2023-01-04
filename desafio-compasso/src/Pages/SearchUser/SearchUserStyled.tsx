@@ -22,7 +22,7 @@ export const CardDiv = styled.div`
   width: 200px;
   height: 320px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
 `;
 
 export const Img = styled.img`
