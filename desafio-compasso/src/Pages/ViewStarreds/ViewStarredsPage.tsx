@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { CardRepo } from "../../Components/CardRepo/CardRepo";
 import { Repo } from "../../types/repo";
 import * as S from "../ViewRepos/Styled";
 import { Button } from "@mui/material";
+import { goToPage } from "../../routes/Coordinator";
 
 export const ViewStarredsPage = () => {
   const [repository, setRepository] = useState<Array<Repo> | null>(null);
 
   const { userName } = useParams();
+  const navigate = useNavigate();
 
   const searchRepository = async (userName: string) => {
     const res = await fetch(`https://api.github.com/users/${userName}/starred`);
@@ -38,9 +39,14 @@ export const ViewStarredsPage = () => {
           })}
       </S.Main>
       <S.Header>
-        <Link to={"/"}>
-          <Button variant="contained">Home</Button>
-        </Link>
+        <Button
+          onClick={() => {
+            goToPage(navigate, "/");
+          }}
+          variant="contained"
+        >
+          Home
+        </Button>
       </S.Header>
     </S.Container>
   );
