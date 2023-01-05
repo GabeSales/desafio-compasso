@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Search } from "../../Components/Search";
+import { Search } from "../../Components/Search/Search";
 import { Card } from "../../Components/Card/Card";
 import { User } from "../../types/user";
-import * as S from "./SearchUserStyled";
+import * as S from "./Styled";
 
 export const SearchPage = () => {
   const [user, setUser] = useState<User | null>(null);

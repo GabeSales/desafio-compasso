@@ -1,5 +1,5 @@
 export type Repo = {
-  id:number
+  id: number;
   name: string;
   descripition: string;
   watchers: string;

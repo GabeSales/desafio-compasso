@@ -1,5 +1,5 @@
-import * as S from "../Pages/ViewRepos/Styled";
-import { Repo } from "../types/repo";
+import * as S from "./Styled";
+import { Repo } from "../../types/repo";
 
 type repoProps = {
   repository: Repo;
@@ -20,8 +20,8 @@ export const CardRepo = ({ repository }: repoProps) => {
     <div>
       <S.CardContainer key={name}>
         <div>
-          <p>{name}</p>
-          <p>{descripition}</p>
+          <h3>{name}</h3>
+          <h4>{descripition}</h4>
           <p>{language}</p>
           <p>assistido - {watchers}</p>
           <p>estrela - {stargazers_count}</p>
@@ -29,7 +29,7 @@ export const CardRepo = ({ repository }: repoProps) => {
         </div>
         <div>
           <a href={html_url} target="_blank">
-            <button>Acessar Repositorio</button>
+            <S.Button>Acessar Repositorio</S.Button>
           </a>
         </div>
       </S.CardContainer>
