@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CardRepo } from "../../Components/CardRepo/CardRepo";
+import { CardRepo } from "../../Components/cardRepo/CardRepo";
 import { Repo } from "../../types/repo";
 import { Button } from "@mui/material";
 import * as S from "./Styled";

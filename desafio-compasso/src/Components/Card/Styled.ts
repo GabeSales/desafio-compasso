@@ -4,12 +4,13 @@ export const CardDiv = styled.div`
   border: 1px solid;
   border-radius: 1rem;
   width: 16rem;
-  height: 24rem;
+  min-height: 24rem;
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  background-color: #5367da;
+  background-color: #4f82f1;
   border: none;
+  padding-bottom: 0.8rem;
 `;
 
 export const Img = styled.img`
@@ -25,6 +26,7 @@ export const ContentDiv = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
 `;
 export const DivButton = styled.div`
   width: 100%;
@@ -32,6 +34,10 @@ export const DivButton = styled.div`
   justify-content: center;
   margin-top: 0.4rem;
   gap: 0.5rem;
+`;
+
+export const List = styled.ul`
+  list-style-type: none;
 `;
 
 export const Button = styled.button`

@@ -1,46 +1,16 @@
 import { useState } from "react";
-import { Search } from "../../Components/Search/Search";
-import { Card } from "../../Components/Card/Card";
+import { Search } from "../../Components/search/Search";
+import { Card } from "../../Components/card/Card";
 import { User } from "../../types/user";
 import * as S from "./Styled";
+import { searchUser } from "../../services/requests";
 
 export const SearchPage = () => {
   const [user, setUser] = useState<User | null>(null);
 
-  const searchUser = async (userName: string) => {
-    const res = await fetch(`https://api.github.com/users/${userName}`);
-    const data = await res.json();
-
-    console.log(data);
-
-    const {
-      avatar_url,
-      name,
-      bio,
-      location,
-      public_repos,
-      followers,
-      following,
-      login,
-    } = data;
-
-    const userData: User = {
-      avatar_url,
-      name,
-      bio,
-      location,
-      public_repos,
-      followers,
-      following,
-      login,
-    };
-
-    setUser(userData);
-  };
-
   return (
     <S.ContainerSearch>
-      <Search searchUser={searchUser} />
+      <Search searchUser={searchUser} setUser={setUser} />
       <S.Main>{user && <Card user={user} />}</S.Main>
     </S.ContainerSearch>
   );

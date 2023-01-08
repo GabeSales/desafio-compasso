@@ -16,10 +16,12 @@ export const Card = ({ user }: userProps) => {
         <S.ContentDiv>
           <h3>{user.name}</h3>
           <h4>{user.bio}</h4>
-          <p>{user.location}</p>
-          <p>Repositorios - {user.public_repos}</p>
-          <p>Seguidores - {user.followers}</p>
-          <p>Seguindo - {user.following}</p>
+          <S.List>
+            <li>{user.location}</li>
+            <li>Repositorios - {user.public_repos}</li>
+            <li>Seguidores - {user.followers}</li>
+            <li>Seguindo - {user.following}</li>
+          </S.List>
           <S.DivButton>
             <Link to={`/${user.login}/repository/`}>
               <S.Button>Repositorios</S.Button>
