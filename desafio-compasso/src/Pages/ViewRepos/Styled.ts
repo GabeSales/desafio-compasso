@@ -9,12 +9,15 @@ export const Container = styled.div`
     overflow: auto;
 `;
 
-export const Header = styled.div`
+export const FlexColumnCenterMargin = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 1rem;
 `;
+
+export const Header = styled(FlexColumnCenterMargin)``;
+export const Footer = styled(FlexColumnCenterMargin)``;
 
 export const Main = styled.main`
     display: flex;

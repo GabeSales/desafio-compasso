@@ -40,7 +40,7 @@ export const ViewStarredsPage = () => {
                         return <CardRepo key={item.id} repository={item} />;
                     })}
             </Styled.Main>
-            <Styled.Header>
+            <Styled.Footer>
                 <Button
                     onClick={() => {
                         goToPage(navigate, "/");
@@ -49,7 +49,7 @@ export const ViewStarredsPage = () => {
                 >
                     Home
                 </Button>
-            </Styled.Header>
+            </Styled.Footer>
         </Styled.Container>
     );
 };

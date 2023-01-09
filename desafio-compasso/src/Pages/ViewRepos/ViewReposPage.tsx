@@ -36,7 +36,7 @@ export const ViewReposPage = () => {
                         return <CardRepo key={item.id} repository={item} />;
                     })}
             </Styled.Main>
-            <Styled.Header>
+            <Styled.Footer>
                 <Button
                     onClick={() => {
                         goToPage(navigate, "/");
@@ -45,7 +45,7 @@ export const ViewReposPage = () => {
                 >
                     Home
                 </Button>
-            </Styled.Header>
+            </Styled.Footer>
         </Styled.Container>
     );
 };
