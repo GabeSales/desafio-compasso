@@ -1,49 +1,49 @@
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CardRepo } from "../../Components/CardRepo/CardRepo";
+import { CardRepo } from "../../Components/cardRepo/CardRepo";
 import { Repo } from "../../types/repo";
 import { Button } from "@mui/material";
-import * as S from "./Styled";
+import * as Styled from "./Styled";
 import { goToPage } from "../../routes/Coordinator";
+import { searchRepository } from "../../services/requests";
 
 export const ViewReposPage = () => {
-  const [repository, setRepository] = useState<Array<Repo> | null>(null);
+    const [repository, setRepository] = useState<Array<Repo> | null>(null);
 
-  const { userName } = useParams();
-  const navigate = useNavigate();
+    const { userName } = useParams();
+    const navigate = useNavigate();
 
-  const searchRepository = async (userName: string) => {
-    const res = await fetch(`https://api.github.com/users/${userName}/repos`);
-    const data = await res.json();
+    if (!repository) {
+        searchRepository(userName as string, setRepository);
+    }
 
-    setRepository(data);
-  };
-
-  if (!repository) {
-    searchRepository(userName as string);
-  }
-
-  return (
-    <S.Container>
-      <S.Header>
-        <h1>Repositorios</h1>
-      </S.Header>
-      <S.Main>
-        {repository &&
-          repository?.map((item) => {
-            return <CardRepo key={item.id} repository={item} />;
-          })}
-      </S.Main>
-      <S.Header>
-        <Button
-          onClick={() => {
-            goToPage(navigate, "/");
-          }}
-          variant="contained"
-        >
-          Home
-        </Button>
-      </S.Header>
-    </S.Container>
-  );
+    return (
+        <Styled.Container>
+            <Styled.Header>
+                <h1>Repositorios</h1>
+            </Styled.Header>
+            <Styled.Main>
+                {repository &&
+                    repository?.map((item) => {
+                        return (
+                            <CardRepo
+                                key={item.id}
+                                repository={item}
+                                setRepository={setRepository}
+                            />
+                        );
+                    })}
+            </Styled.Main>
+            <Styled.Footer>
+                <Button
+                    onClick={() => {
+                        goToPage(navigate, "/");
+                    }}
+                    variant="contained"
+                >
+                    Home
+                </Button>
+            </Styled.Footer>
+        </Styled.Container>
+    );
 };
