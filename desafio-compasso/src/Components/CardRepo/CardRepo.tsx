@@ -2,7 +2,8 @@ import * as Styled from "./Styled";
 import { Repo } from "../../types/repo";
 
 type repoProps = {
-    repository: Repo;
+    repository: Repo,
+    setRepository:React.Dispatch<React.SetStateAction<Repo[] | null>>
 };
 
 export const CardRepo = ({ repository }: repoProps) => {

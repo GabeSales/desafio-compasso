@@ -5,6 +5,7 @@ import { Repo } from "../../types/repo";
 import { Button } from "@mui/material";
 import * as Styled from "./Styled";
 import { goToPage } from "../../routes/Coordinator";
+import { searchRepository } from "../../services/requests";
 
 export const ViewReposPage = () => {
     const [repository, setRepository] = useState<Array<Repo> | null>(null);
@@ -12,17 +13,8 @@ export const ViewReposPage = () => {
     const { userName } = useParams();
     const navigate = useNavigate();
 
-    const searchRepository = async (userName: string) => {
-        const res = await fetch(
-            `https://api.github.com/users/${userName}/repos`
-        );
-        const data = await res.json();
-
-        setRepository(data);
-    };
-
     if (!repository) {
-        searchRepository(userName as string);
+        searchRepository(userName as string, setRepository);
     }
 
     return (
@@ -33,7 +25,13 @@ export const ViewReposPage = () => {
             <Styled.Main>
                 {repository &&
                     repository?.map((item) => {
-                        return <CardRepo key={item.id} repository={item} />;
+                        return (
+                            <CardRepo
+                                key={item.id}
+                                repository={item}
+                                setRepository={setRepository}
+                            />
+                        );
                     })}
             </Styled.Main>
             <Styled.Footer>

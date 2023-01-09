@@ -1,4 +1,5 @@
 import React from "react";
+import { Repo } from "../types/repo";
 import { User } from "../types/user";
 
 export const searchUser = async (
@@ -33,4 +34,24 @@ export const searchUser = async (
     };
 
     setUser(userData);
+};
+
+export const searchRepository = async (
+    userName: string,
+    setRepository: React.Dispatch<React.SetStateAction<Repo[] | null>>
+) => {
+    const res = await fetch(`https://api.github.com/users/${userName}/repos`);
+    const data = await res.json();
+
+    setRepository(data);
+};
+
+export const searchStarred = async (
+    userName: string,
+    setRepository: React.Dispatch<React.SetStateAction<Repo[] | null>>
+) => {
+    const res = await fetch(`https://api.github.com/users/${userName}/starred`);
+    const data = await res.json();
+
+    setRepository(data);
 };
