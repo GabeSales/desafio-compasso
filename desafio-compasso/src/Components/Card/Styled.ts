@@ -27,6 +27,7 @@ export const ContentDiv = styled.div`
     align-items: center;
     flex-direction: column;
     text-align: center;
+    padding: 0 1rem;
 `;
 export const DivButton = styled.div`
     width: 100%;

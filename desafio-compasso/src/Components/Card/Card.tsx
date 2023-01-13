@@ -9,7 +9,7 @@ type userProps = {
 
 export const Card = ({ user }: userProps) => { 
 
-    if (!user.name) return <UserNotFounded />;
+    if (!user.login) return <UserNotFounded />;
     return (
         <div>
             <Styled.CardDiv>

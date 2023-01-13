@@ -10,6 +10,7 @@ export const UserNotFounded = () => {
             <Styled.ContentDiv>
                 <h3>Usuário não encontrado</h3>
                 <h1>:C</h1>
+                <h3>Verifique o nome inserido e tente novamente</h3>
             </Styled.ContentDiv>
         </Styled.CardDiv>
     );
