@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CardRepo } from "../../Components/cardRepo/CardRepo";
 import { Repo } from "../../types/repo";
@@ -22,18 +22,22 @@ export const ViewStarredsPage = () => {
             <Styled.Header>
                 <h1>Starreds</h1>
             </Styled.Header>
-            <Styled.Main>
-                {repository &&
-                    repository?.map((item) => {
-                        return (
-                            <CardRepo
-                                key={item.id}
-                                repository={item}
-                                setRepository={setRepository}
-                            />
-                        );
-                    })}
-            </Styled.Main>
+            {repository?.length ? (
+                <Styled.Main>
+                    {repository &&
+                        repository?.map((item) => {
+                            return (
+                                <CardRepo
+                                    key={item.id}
+                                    repository={item}
+                                    setRepository={setRepository}
+                                />
+                            );
+                        })}
+                </Styled.Main>
+            ) : (
+                <h2>Esse usuário não possui nenhum repositorio com estrela</h2>
+            )}
             <Styled.Footer>
                 <Button
                     onClick={() => {

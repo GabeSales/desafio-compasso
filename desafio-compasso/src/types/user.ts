@@ -6,6 +6,5 @@ export type User = {
     public_repos: string;
     followers: string;
     following: string;
-    login: string
-  };
-  
+    login: string;
+};
