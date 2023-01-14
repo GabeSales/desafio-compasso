@@ -22,18 +22,22 @@ export const ViewReposPage = () => {
             <Styled.Header>
                 <h1>Repositorios</h1>
             </Styled.Header>
-            <Styled.Main>
-                {repository &&
-                    repository?.map((item) => {
-                        return (
-                            <CardRepo
-                                key={item.id}
-                                repository={item}
-                                setRepository={setRepository}
-                            />
-                        );
-                    })}
-            </Styled.Main>
+            {repository?.length ? (
+                <Styled.Main>
+                    {repository &&
+                        repository?.map((item) => {
+                            return (
+                                <CardRepo
+                                    key={item.id}
+                                    repository={item}
+                                    setRepository={setRepository}
+                                />
+                            );
+                        })}
+                </Styled.Main>
+            ) : (
+                <h2>Esse usuário não possui nenhum repositorio</h2>
+            )}
             <Styled.Footer>
                 <Button
                     onClick={() => {
