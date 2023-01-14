@@ -1,12 +1,15 @@
 import { Link } from "react-router-dom";
 import * as Styled from "./Styled";
 import { User } from "../../types/user";
+import { UserNotFounded } from "../UserNotFounded/UserNotFounded";
 
 type userProps = {
     user: User;
 };
 
-export const Card = ({ user }: userProps) => {
+export const Card = ({ user }: userProps) => { 
+
+    if (!user.login) return <UserNotFounded />;
     return (
         <div>
             <Styled.CardDiv>

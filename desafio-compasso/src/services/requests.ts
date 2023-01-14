@@ -2,45 +2,30 @@ import React from "react";
 import { Repo } from "../types/repo";
 import { User } from "../types/user";
 
+const { VITE_APP_BASE_URL, VITE_APP_GITHUB_TOKEN } = import.meta.env;
+
 export const searchUser = async (
     userName: string,
-    setUser: React.Dispatch<React.SetStateAction<User | null>>
 ) => {
-    const res = await fetch(`https://api.github.com/users/${userName}`);
-    const data = await res.json();
+    const res = await fetch(`${VITE_APP_BASE_URL}/${userName}`, {
+        headers: {
+            Authorization: `Bearer ${VITE_APP_GITHUB_TOKEN}`,
+        },
+    });
+    const data: User = await res.json();
 
-    console.log(data);
-
-    const {
-        avatar_url,
-        name,
-        bio,
-        location,
-        public_repos,
-        followers,
-        following,
-        login,
-    } = data;
-
-    const userData: User = {
-        avatar_url,
-        name,
-        bio,
-        location,
-        public_repos,
-        followers,
-        following,
-        login,
-    };
-
-    setUser(userData);
+    return data
 };
 
 export const searchRepository = async (
     userName: string,
     setRepository: React.Dispatch<React.SetStateAction<Repo[] | null>>
 ) => {
-    const res = await fetch(`https://api.github.com/users/${userName}/repos`);
+    const res = await fetch(`${VITE_APP_BASE_URL}/${userName}/repos`, {
+        headers: {
+            Authorization: `Bearer ${VITE_APP_GITHUB_TOKEN}`,
+        },
+    });
     const data = await res.json();
 
     setRepository(data);
@@ -50,7 +35,11 @@ export const searchStarred = async (
     userName: string,
     setRepository: React.Dispatch<React.SetStateAction<Repo[] | null>>
 ) => {
-    const res = await fetch(`https://api.github.com/users/${userName}/starred`);
+    const res = await fetch(`${VITE_APP_BASE_URL}/${userName}/starred`, {
+        headers: {
+            Authorization: `Bearer ${VITE_APP_GITHUB_TOKEN}`,
+        },
+    });
     const data = await res.json();
 
     setRepository(data);

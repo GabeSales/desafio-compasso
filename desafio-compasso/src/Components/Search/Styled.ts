@@ -11,9 +11,10 @@ export const Header = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 1.5rem;
+    text-align: center;
 `;
 
-export const DivSearch = styled.div`
+export const Form = styled.form`
     display: flex;
     width: 80vw;
     margin: 0 auto;
