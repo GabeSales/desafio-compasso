@@ -13,7 +13,7 @@ This project had the purpose of adding to the portfolio and generating learning 
 - CSS
 - JAVASCRIPT
 - REACT JS
-- REACT ROUTERDOM
+- REACT ROUTER DOM
 - STYLED-COMPONENTS
 - UI MATERIAL
 
