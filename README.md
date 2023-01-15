@@ -70,12 +70,11 @@ Siga o passo-a-passo abaixo:
 | Instale as Dependências   | `npm install`      |
 | Utilize o Script Start    | `npm start`        |
 
+ ### Pictures / Imagens
+ 
+![SearchPage](https://user-images.githubusercontent.com/102243306/212503018-e89ac30d-c1d3-41ba-9c65-839a487cf875.png)
+![ReposPage](https://user-images.githubusercontent.com/102243306/212503020-8a5379d4-2ba7-4f7d-86cb-128a763a29e2.png)
+![StarredsPage](https://user-images.githubusercontent.com/102243306/212503026-bcb4d029-5c80-4064-b5e5-dc5668f884d3.png)
 
-### 📱Pictures / Imagens
-
- Search / Pesquisa         |Repositories / Repositorios| Starreds / Estrelas
-:-------------------------:|:-------------------------:|:-------------------------:
-
-![Search Screen / Tela de Pesquisa](![image](https://user-images.githubusercontent.com/102243306/212500892-ace75bb7-364e-48ec-9b76-171afd5a9113.png))   |  ![Repositories Screen / Tela de Repositorios](![image](https://user-images.githubusercontent.com/102243306/212500936-b61b8233-bb6c-44a1-ab69-f6d7877a063c.png))   |  ![Starreds Screen / Tela de Starreds](![image](![image](https://user-images.githubusercontent.com/102243306/212501060-95cac19d-af30-4eca-a1c9-4d97c01f7184.png)))
 
 
