@@ -1,4 +1,4 @@
-# Challenge-compass - English
+# Challenge Github - English
 
 - Link: https://desafio-compasso-gabesales.surge.sh/
 
@@ -36,7 +36,7 @@ Follow the step-by-step below:
 
 #
 
-# Desafio-compasso - Português
+# Desafio Github - Português
 
 - Link: https://desafio-compasso-gabesales.surge.sh/
 
