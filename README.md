@@ -11,7 +11,7 @@ This project had the purpose of adding to the portfolio and generating learning 
 
 - HTML5
 - CSS
-- JAVASCRIPT
+- TYPESCRIPT
 - REACT JS
 - REACT ROUTER DOM
 - STYLED-COMPONENTS
@@ -48,7 +48,7 @@ Esse projeto teve como proposito acrescentar no portifolio e me gerar aprendizad
 
 - HTML5
 - CSS
-- JAVASCRIPT
+- TYPESCRIPT
 - REACT JS
 - REACT ROUTER DOM
 - STYLED-COMPONENTS
