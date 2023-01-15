@@ -1,6 +1,7 @@
 # Challenge-compass - English
 
-- [View application](https://desafio-compasso-gabesales.surge.sh/)
+- Link: https://desafio-compasso-gabesales.surge.sh/
+
 
 ## Purpose
 This project had the purpose of adding to the portfolio and generating learning in the area of ​​web development.
@@ -31,13 +32,13 @@ Follow the step-by-step below:
 | ------------------------- | ------------------ |
 | Clone | `git clone` |
 | Install Dependencies | `npm install` |
-| Use the Start Script | `npm start` |
+| Use the Start Script | `npm run dev` |
 
 #
 
 # Desafio-compasso - Português
 
-- [Visualizar aplicação](https://desafio-compasso-gabesales.surge.sh/)
+- Link: https://desafio-compasso-gabesales.surge.sh/
 
 ## Proposito
 Esse projeto teve como proposito acrescentar no portifolio e me gerar aprendizado na area de desenvolvimento web.
@@ -68,7 +69,7 @@ Siga o passo-a-passo abaixo:
 | ------------------------- | ------------------ |
 | Faça o Clone              | `git clone`        |
 | Instale as Dependências   | `npm install`      |
-| Utilize o Script Start    | `npm start`        |
+| Utilize o Script Start    | `npm run dev`      |
 
  ### Pictures / Imagens
  
