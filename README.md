@@ -36,7 +36,7 @@ Follow the step-by-step below:
 | Install Dependencies | `npm install` |
 | Use the Start Script | `npm run dev` |
 
-#
+___
 
 # Desafio Github - Português
 
