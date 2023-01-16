@@ -6,6 +6,8 @@
 ## Purpose
 This project had the purpose of adding to the portfolio and generating learning in the area of ​​web development.
 
+ In this, I was introduced to forms of authentication, using the Bearer Token in this project, I started to better understand how to deal with the security of requests
+
 - Simple project performing github api interaction with the web interface
 
 ### Tools
@@ -43,7 +45,9 @@ Follow the step-by-step below:
 ## Proposito
 Esse projeto teve como proposito acrescentar no portifolio e me gerar aprendizado na area de desenvolvimento web.
 
-- Projeto simples realizando interação da api do github com o a interface web
+ Neste, fui introduzido a formas de autenticação, utilizando neste projeto o Bearer Token, comecei a entender melhor como lidar com a seguraça de requests.
+
+- Projeto simples realizando interação da api do github com o a interface web 
 
 ### Ferramentas
 
