@@ -1,6 +1,6 @@
 # Challenge Github - English
 
-- Link: https://desafio-compasso-gabesales.surge.sh/
+- Link: https://desafio-github-gabesales.surge.sh/
 
 
 ## Purpose
@@ -40,7 +40,7 @@ Follow the step-by-step below:
 
 # Desafio Github - Português
 
-- Link: https://desafio-compasso-gabesales.surge.sh/
+- Link: https://desafio-github-gabesales.surge.sh/
 
 ## Proposito
 Esse projeto teve como proposito acrescentar no portifolio e me gerar aprendizado na area de desenvolvimento web.
