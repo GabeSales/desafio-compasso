@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import * as Styled from "./Styled";
 import { User } from "../../types/user";
-import { UserNotFounded } from "../UserNotFounded/UserNotFounded";
+import { UserNotFounded } from "../userNotFounded/UserNotFounded";
 
 type userProps = {
     user: User;

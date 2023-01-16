@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { SearchPage } from "../Pages/SearchUser/SearchPage";
-import { ViewReposPage } from "../Pages/ViewRepos/ViewReposPage";
-import { ViewStarredsPage } from "../Pages/ViewStarreds/ViewStarredsPage";
+import { SearchPage } from "../Pages/searchUser/SearchPage";
+import { ViewReposPage } from "../Pages/viewRepos/ViewReposPage";
+import { ViewStarredsPage } from "../Pages/viewStarreds/ViewStarredsPage";
 
 export const Router = () => {
     return (

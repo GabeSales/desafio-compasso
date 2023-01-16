@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CardRepo } from "../../Components/cardRepo/CardRepo";
 import { Repo } from "../../types/repo";
-import * as Styled from "../ViewRepos/Styled";
+import * as Styled from "../viewRepos/Styled";
 import { Button } from "@mui/material";
 import { goToPage } from "../../routes/Coordinator";
 import { searchStarred } from "../../services/requests";
